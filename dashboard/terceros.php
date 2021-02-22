@@ -37,6 +37,8 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <th>Direccion</th>
                                 <th>Telefono</th>
                                 <th>Email</th>
+                                <th>% IVA</th>
+                                <th>% Renta</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -53,6 +55,8 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $dat['Direccion'] ?></td>
                                 <td><?php echo $dat['Telefono'] ?></td>
                                 <td><?php echo $dat['Email'] ?></td>
+                                <td><?php echo $dat['IVA'] ?></td>
+                                <td><?php echo $dat['Renta'] ?></td>
                                 <td></td>
                             </tr>
                             <?php
