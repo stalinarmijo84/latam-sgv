@@ -55,12 +55,12 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $dat['Direccion'] ?></td>
                                 <td><?php echo $dat['Telefono'] ?></td>
                                 <td><?php echo $dat['Email'] ?></td>
-                                <td><?php echo $dat['IVA'] ?></td>
-                                <td><?php echo $dat['Renta'] ?></td>
+                                <td><?php echo $dat['idRetencionIVA'] ?></td>
+                                <td><?php echo $dat['idRetencionRenta'] ?></td> 
                                 <td></td>
                             </tr>
                             <?php
-                                }
+                            }
                             ?>
                         </tbody>
                     </table>
@@ -120,7 +120,33 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                             <label class="col-form-label">Correo:</label>
                             <input type="email" class="text_texto" id="Email" name="Email" required>
                         </div>
+                        <label class="col-form-label">Seleccione la retencón de iva</label></br>
+                        <select class="con_estilos" id="idcmbiva" name="cmbiva" required>
+                                <?php
+                                $consulta = "CALL LLENA_COMBO_RETENCION_IVA()";
+                                $resultado = $conexion->prepare($consulta);
+                                $resultado->execute();
+                                $terceros=$resultado->fetchAll(PDO::FETCH_ASSOC);
+                                foreach($terceros as $dato){
+                                    echo '<option value="'.$dato['idTipo_retencion'].'">'.$dato['porcentaje'].'</option>';
+                                }
+                                ?>
+                        </select>
+                        <label class="col-form-label">Seleccione la retencón de renta</label></br>
+                        
+                        <select class="con_estilos" id="idcmbrenta" name="cmbrenta" required>
+                                <?php
+                                $consulta = "CALL LLENA_COMBO_RETENCION_RENTA()";
+                                $resultado = $conexion->prepare($consulta);
+                                $resultado->execute();
+                                $terceros=$resultado->fetchAll(PDO::FETCH_ASSOC);
+                                foreach($terceros as $dato){
+                                    echo '<option value="'.$dato['idTipo_retencion'].'">'.$dato['porcentaje'].'</option>';
+                                }
+                                ?>
+                        </select>
                     </div>
+        
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
                         <button type="submit" id="btnGuardar" class="btn btn-dark">Guardar</button>

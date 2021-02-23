@@ -10,6 +10,8 @@ $Identificacion = (isset($_POST['Identificacion'])) ? $_POST['Identificacion'] :
 $Direccion = (isset($_POST['Direccion'])) ? $_POST['Direccion'] : '';
 $Telefono = (isset($_POST['Telefono'])) ? $_POST['Telefono'] : '';
 $Email = (isset($_POST['Email'])) ? $_POST['Email'] : '';
+$idRetencionIVA = (isset($_POST['idRetencionIVA'])) ? $_POST['idRetencionIVA'] : '';
+$idRetencionRenta = (isset($_POST['idRetencionRenta'])) ? $_POST['idRetencionRenta'] : '';
 $opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';
 $IdTercero = (isset($_POST['IdTercero'])) ? $_POST['IdTercero'] : '';
 
