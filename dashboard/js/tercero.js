@@ -89,11 +89,14 @@ $(document).ready(function () {
         Direccion = $.trim($("#Direccion").val());
         Telefono = $.trim($("#Telefono").val());
         Email = $.trim($("#Email").val());
+        cmbtipo = $.trim($("#idcmbtipo").val());
+        cmbiva = $.trim($("#idcmbiva").val());
+        cmbrenta = $.trim($("#idcmbrenta").val());
         $.ajax({
             url: "clases/tercero.php",
             type: "POST",
             dataType: "json",
-            data: { IdTercero:IdTercero, cmbtipo:cmbtipo ,Nombres:Nombres, Apellidos:Apellidos, Identificacion:Identificacion, Direccion:Direccion, Telefono:Telefono, Email:Email, opcion:opcion },
+            data: { IdTercero:IdTercero, cmbtipo:cmbtipo ,Nombres:Nombres, Apellidos:Apellidos, Identificacion:Identificacion, Direccion:Direccion, Telefono:Telefono, Email:Email, opcion:opcion,cmbiva:cmbiva, cmbrenta:cmbrenta},
             success: function (data) {
                 console.log(data);
             }

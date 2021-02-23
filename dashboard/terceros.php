@@ -226,3 +226,13 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
         $('#idcmbtipo').select2();
         });
 </script>
+<script>
+    $(document).ready(function(){
+        $('#idcmbiva').select2();
+        });
+</script>
+<script>
+    $(document).ready(function(){
+        $('#idcmbrenta').select2();
+        });
+</script>

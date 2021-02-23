@@ -17,7 +17,7 @@ $IdTercero = (isset($_POST['IdTercero'])) ? $_POST['IdTercero'] : '';
 
 switch($opcion){
     case 1: //alta
-        $consulta = "CALL REGISTRO_TERCERO('$cmbtipo','$Nombres','$Apellidos','$Identificacion','$Direccion','$Telefono','$Email')";			
+        $consulta = "CALL REGISTRO_TERCERO('$cmbtipo','$Nombres','$Apellidos','$Identificacion','$Direccion','$Telefono','$Email',$idRetencionIVA ,$idRetencionRenta)";			
         $resultado = $conexion->prepare($consulta);
         $resultado->execute(); 
         //$data=$resultado->fetchAll(PDO::FETCH_ASSOC);
