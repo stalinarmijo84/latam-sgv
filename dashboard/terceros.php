@@ -84,7 +84,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                     <div class="modal-body">
                         <div class="form-group">
                             <label class="col-form-label">Seleccione el tipo de Tercero</label></br>
-                            <select class="con_estilos" id="idcmbtipo" name="cmbtipo" required>
+                            <select style="height: fit-content;" class="con_estilos" id="idcmbtipo" name="cmbtipo" required>
                                 <?php
                                 $consulta = "CALL LLENA_COMBO_TIPO_TERCERO()";
                                 $resultado = $conexion->prepare($consulta);
@@ -120,8 +120,8 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                             <label class="col-form-label">Correo:</label>
                             <input type="email" class="text_texto" id="Email" name="Email" required>
                         </div>
-                        <label class="col-form-label">Seleccione la retencón de iva</label></br>
-                        <select class="con_estilos" id="idcmbiva" name="cmbiva" required>
+                        <label class="col-form-label">Seleccione el % de retención de iva</label></br>
+                        <select style="height: fit-content;" class="con_estilos" id="idcmbiva" name="cmbiva" required>
                                 <?php
                                 $consulta = "CALL LLENA_COMBO_RETENCION_IVA()";
                                 $resultado = $conexion->prepare($consulta);
@@ -132,9 +132,9 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 }
                                 ?>
                         </select>
-                        <label class="col-form-label">Seleccione la retencón de renta</label></br>
+                        <label class="col-form-label">Seleccione el % de retención de renta</label></br>
                         
-                        <select class="con_estilos" id="idcmbrenta" name="cmbrenta" required>
+                        <select style="height: fit-content;" class="con_estilos" id="idcmbrenta" name="cmbrenta" required>
                                 <?php
                                 $consulta = "CALL LLENA_COMBO_RETENCION_RENTA()";
                                 $resultado = $conexion->prepare($consulta);
