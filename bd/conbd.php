@@ -1,10 +1,10 @@
 <?php 
 class Conexion{	  
     public static function Conectar() {        
-        define('servidor', 'vecoin.ddns.net:3306');
+        define('servidor', 'latamds.sytes.net:3306');
         define('nombre_bd', 'latamdso_sgv');
         define('usuario', 'root');
-        define('password', '');					        
+        define('password', 'root');					        
         $opciones = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');			
         try{
             $conexion = new PDO("mysql:host=".servidor."; dbname=".nombre_bd, usuario, password, $opciones);			
