@@ -17,25 +17,24 @@ $IdTercero = (isset($_POST['IdTercero'])) ? $_POST['IdTercero'] : '';
 
 switch($opcion){
     case 1: //alta
-        $consulta = "CALL REGISTRO_TERCERO('$cmbtipo','$Nombres','$Apellidos','$Identificacion','$Direccion','$Telefono','$Email',$idRetencionIVA ,$idRetencionRenta)";			
+        $consulta = "CALL REGISTRO_TERCERO('$cmbtipo','$Nombres','$Apellidos','$Identificacion','$Direccion','$Telefono','$Email','$idRetencionIVA','$idRetencionRenta')";			
         $resultado = $conexion->prepare($consulta);
         $resultado->execute(); 
         //$data=$resultado->fetchAll(PDO::FETCH_ASSOC);
-        break;
+    break;
     case 2: //modificación
-        $consulta = "CALL ACTUALIZA_TERCERO('$IdTercero','$cmbtipo','$Nombres','$Apellidos','$Identificacion','$Direccion','$Telefono','$Email')";		
+        $consulta = "CALL ACTUALIZA_TERCERO('$IdTercero','$cmbtipo','$Nombres','$Apellidos','$Identificacion','$Direccion','$Telefono','$Email','$idRetencionIVA','$idRetencionRenta')";		
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();   
         //$data=$resultado->fetchAll(PDO::FETCH_ASSOC);   
-        break;      
+    break;      
     case 3://baja
         $consulta = "CALL ELIMINA_TERCERO($IdTercero)";		
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();    
         //$data=$resultado->fetchAll(PDO::FETCH_ASSOC);        
-        break;        
+    break;        
 }
-
 //print json_encode($data, JSON_UNESCAPED_UNICODE); //enviar el array final en formato json a JS
 $conexion = NULL;
 ?>
