@@ -24,7 +24,7 @@ $("#formLogin").submit(function (e) {
         } else {
           Swal.fire({
             type: "success",
-            title: "¡Bienbenido! "+usuario,
+            title: "¡Bienvenido, "+usuario+"!",
             confirmButtonColor: "#3085d6",
             confirmButtonText: "Ingresar",
           }).then((result) => {
