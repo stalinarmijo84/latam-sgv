@@ -3,7 +3,7 @@ $(document).ready(function () {
         "columnDefs": [{
             "targets": -1,
             "data": null,
-            "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditar'>Editar</button><button class='btn btn-danger btnBorrar'>Borrar</button></div></div>"
+            "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-warning btnEditar'><i class='fas fa-marker'></i></button><button class='btn btn-danger btnBorrar'><i class='far fa-trash-alt'></i></button></div></div>"
         }],
 
         "language": {
@@ -73,7 +73,7 @@ $(document).ready(function () {
                 dataType: "json",
                 data: { opcion: opcion, IdTercero: IdTercero },
                 success: function () {
-                    tablaClientes.row(fila.parents('tr')).remove().draw();
+                    tablaTerceros.row(fila.parents('tr')).remove().draw();
                 }
             });
         }
@@ -108,6 +108,5 @@ $(document).ready(function () {
             }
         });
         $("#modalCRUD").modal("hide");
-        $('.btn.btn-info').click();
     });
 });

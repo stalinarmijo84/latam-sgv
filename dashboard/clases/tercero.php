@@ -24,16 +24,16 @@ switch($opcion){
         
     break;
     case 2: //modificación
-        $consulta = "CALL ACTUALIZA_TERCERO('$IdTercero','$cmbtipo','$Nombres','$Apellidos','$Identificacion','$Direccion','$Telefono','$Email','$idRetencionIVA','$idRetencionRenta')";		
+        $consulta = "CALL ACTUALIZA_TERCERO('$IdTercero','$cmbtipo','$Nombres','$Apellidos','$Identificacion','$Direccion','$Telefono','$Email','$cmbiva','$cmbrenta')";		
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();   
         //$data=$resultado->fetchAll(PDO::FETCH_ASSOC);   
     break;      
     case 3://baja
-        $consulta = "CALL ELIMINA_TERCERO($IdTercero)";		
+        $consulta = "CALL ELIMINA_TERCERO('$IdTercero')";		
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();    
-        //$data=$resultado->fetchAll(PDO::FETCH_ASSOC);        
+        $data=$resultado->fetchAll(PDO::FETCH_ASSOC);        
     break;        
 }
 //print json_encode($data, JSON_UNESCAPED_UNICODE); //enviar el array final en formato json a JS
