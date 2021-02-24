@@ -8,7 +8,7 @@ $conexion = $objeto->Conectar();
 //recepción de datos enviados mediante POST desde ajax admin admin
 $usuario = (isset($_POST['usuario'])) ? $_POST['usuario'] : '';
 $password = (isset($_POST['password'])) ? $_POST['password'] : '';
-$consulta = "CALL LOGIN_USUARIO('$usuario','$password ')";
+$consulta = "CALL LOGIN_USUARIO('$usuario','$password')";
 $resultado = $conexion->prepare($consulta);
 $resultado->execute();
 if($resultado->rowCount() >= 1){
