@@ -22,7 +22,6 @@ $(document).ready(function () {
             "sProcessing": "Procesando...",
         }
     });
-
     $("#btnNuevo").click(function () {
         $("#formTerceros").trigger("reset");
         $(".modal-header").css("background-color", "#1cc88a");
@@ -92,14 +91,23 @@ $(document).ready(function () {
         cmbiva = $.trim($("#idcmbiva").val());
         cmbrenta = $.trim($("#idcmbrenta").val());
         $.ajax({
-            url: "clases/tercero.php",
             type: "POST",
+            url: "clases/tercero.php",
             dataType: "json",
             data: { IdTercero:IdTercero, cmbtipo:cmbtipo ,Nombres:Nombres, Apellidos:Apellidos, Identificacion:Identificacion, Direccion:Direccion, Telefono:Telefono, Email:Email,cmbiva:cmbiva, cmbrenta:cmbrenta, opcion:opcion },
-            success: function (data) {
+            /*success: function (data) {
                 console.log(data);
+            }*/
+            success: function(data){ 
+                if(data){    
+                  alert('Creado correctamente!');
+                  
+                } else {
+                   alert('Error al crear!');
+                }
             }
         });
         $("#modalCRUD").modal("hide");
+        $('.btn.btn-info').click();
     });
 });

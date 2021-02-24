@@ -15,62 +15,64 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <button id="btnNuevo" type="button" class="btn btn-success" data-toggle="modal">Registrar nuevo</button>
-                <a href="terceros.php" type="button" class="btn btn-info">Refresh</a>
+                <button id="btnNuevo" type="button" class="btn btn-success" 
+                data-toggle="modal">Registrar nuevo</button>
+                <a href="terceros.php" type="button" class="btn btn-info">Refrescar</a>
             </div>
         </div>
     </div>
     <br>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="table-responsive">
-                    <table id="tablaTerceros" class="table table-striped table-bordered table-condensed"
-                        style="width:100%">
-                        <thead class="text-center">
-                            <tr>
-                                <th>Id</th>
-                                <th>Tipo</th>
-                                <th>Nombres</th>
-                                <th>Apellidos</th>
-                                <th>Identificacion</th>
-                                <th>Direccion</th>
-                                <th>Telefono</th>
-                                <th>Email</th>
-                                <th>% IVA</th>
-                                <th>% Renta</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php                            
-                            foreach($data as $dat) {                                                        
-                            ?>
-                            <tr>
-                                <td><?php echo $dat['IdTercero'] ?></td>
-                                <td><?php echo $dat['Tercero'] ?></td>
-                                <td><?php echo $dat['Nombres'] ?></td>
-                                <td><?php echo $dat['Apellidos'] ?></td>
-                                <td><?php echo $dat['Identificacion'] ?></td>
-                                <td><?php echo $dat['Direccion'] ?></td>
-                                <td><?php echo $dat['Telefono'] ?></td>
-                                <td><?php echo $dat['Email'] ?></td>
-                                <td><?php echo $dat['idRetencionIVA'] ?></td>
-                                <td><?php echo $dat['idRetencionRenta'] ?></td> 
-                                <td></td>
-                            </tr>
-                            <?php
-                            }
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="row">
+<div class="col-lg-12">
+<div class="table-responsive">
+    <table id="tablaTerceros" class="table table-striped table-bordered table-condensed"
+        style="width:100%">
+        <thead class="text-center">
+            <tr>
+                <th>Id</th>
+                <th>Tipo</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Identificacion</th>
+                <th>Direccion</th>
+                <th>Telefono</th>
+                <th>Email</th>
+                <th>% IVA</th>
+                <th>% Renta</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php                            
+            foreach($data as $dat) {                                                        
+            ?>
+            <tr>
+                <td><?php echo $dat['IdTercero'] ?></td>
+                <td><?php echo $dat['Tercero'] ?></td>
+                <td><?php echo $dat['Nombres'] ?></td>
+                <td><?php echo $dat['Apellidos'] ?></td>
+                <td><?php echo $dat['Identificacion'] ?></td>
+                <td><?php echo $dat['Direccion'] ?></td>
+                <td><?php echo $dat['Telefono'] ?></td>
+                <td><?php echo $dat['Email'] ?></td>
+                <td><?php echo $dat['idRetencionIVA'] ?></td>
+                <td><?php echo $dat['idRetencionRenta'] ?></td> 
+                <td></td>
+            </tr>
+            <?php
+            }
+            ?>
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+</div>
 
     <!--Modal para CRUD-->
-    <div class="modal fade" id="modalCRUD" tabindex=null role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="modalCRUD" tabindex=null role="dialog" 
+    aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -184,23 +186,23 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
 
 <!-- Logout Modal-->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">¿Confirma salir y cerrar Sesión?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body"></div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                <a class="btn btn-primary" href="../bd/logout.php">Salir</a>
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalLabel">¿Confirma salir y cerrar Sesión?</h5>
+<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body"></div>
+<div class="modal-footer">
+<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+<a class="btn btn-primary" href="../bd/logout.php">Salir</a>
 
-            </div>
-        </div>
-    </div>
+</div>
+</div>
+</div>
 </div>
 
 <!-- Bootstrap core JavaScript-->

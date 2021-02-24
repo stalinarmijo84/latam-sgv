@@ -10,17 +10,18 @@ $Identificacion = (isset($_POST['Identificacion'])) ? $_POST['Identificacion'] :
 $Direccion = (isset($_POST['Direccion'])) ? $_POST['Direccion'] : '';
 $Telefono = (isset($_POST['Telefono'])) ? $_POST['Telefono'] : '';
 $Email = (isset($_POST['Email'])) ? $_POST['Email'] : '';
-$idRetencionIVA = (isset($_POST['idRetencionIVA'])) ? $_POST['idRetencionIVA'] : '';
-$idRetencionRenta = (isset($_POST['idRetencionRenta'])) ? $_POST['idRetencionRenta'] : '';
+$cmbiva = (isset($_POST['cmbiva'])) ? $_POST['cmbiva'] : '';
+$cmbrenta = (isset($_POST['cmbrenta'])) ? $_POST['cmbrenta'] : '';
 $opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';
 $IdTercero = (isset($_POST['IdTercero'])) ? $_POST['IdTercero'] : '';
 
 switch($opcion){
     case 1: //alta
-        $consulta = "CALL REGISTRO_TERCERO('$cmbtipo','$Nombres','$Apellidos','$Identificacion','$Direccion','$Telefono','$Email','$idRetencionIVA','$idRetencionRenta')";			
+        $consulta = "CALL REGISTRO_TERCERO('$cmbtipo','$Nombres','$Apellidos','$Identificacion','$Direccion','$Telefono','$Email','$cmbiva','$cmbrenta')";			
         $resultado = $conexion->prepare($consulta);
         $resultado->execute(); 
-        //$data=$resultado->fetchAll(PDO::FETCH_ASSOC);
+        $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
+        
     break;
     case 2: //modificación
         $consulta = "CALL ACTUALIZA_TERCERO('$IdTercero','$cmbtipo','$Nombres','$Apellidos','$Identificacion','$Direccion','$Telefono','$Email','$idRetencionIVA','$idRetencionRenta')";		
